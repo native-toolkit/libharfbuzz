@@ -1,10 +1,11 @@
 <xml>
-
+	
 	<files id="native-toolkit-harfbuzz" >
-
-		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src" />
+		
+		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/" />
 		<compilerflag value="-DHAVE_OT" />
-
+		<compilerflag value="-DHAVE_UCDN" if="windows" />
+		
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-blob.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-buffer-serialize.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-buffer.cc" />
@@ -39,27 +40,26 @@
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shape.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shaper.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn.cc" />
+		<!-- <file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-uniscribe.cc" if="windows" /> -->
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-unicode.cc" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-uniscribe.cc" if="windows" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-warning.cc" />
-
-		<section>
-
+		
+		<section if="windows">
+			
 			<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn" />
 			<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn/ucdn.c" />
-
+			
 		</section>
-
-		<!-- relies on lime dependency... -->
-		<section if="LIME_FREETYPE">
-
+		
+		<section>
+			
 			<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/freetype/include" />
 			<compilerflag value="-DHAVE_FREETYPE" />
-
+			
 			<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ft.cc" />
-
+			
 		</section>
-
+		
 	</files>
-
+	
 </xml>
