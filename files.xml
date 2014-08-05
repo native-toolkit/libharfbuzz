@@ -2,22 +2,32 @@
 	
 	<files id="native-toolkit-harfbuzz" >
 		
+		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/freetype/include" />
+		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn" />
 		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/" />
+		
+		<compilerflag value="-DHAVE_FREETYPE" />
 		<compilerflag value="-DHAVE_OT" />
-		<compilerflag value="-DHAVE_UCDN" if="windows || linux" />
+		<compilerflag value="-DHAVE_UCDN" />
+		
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ft.cc" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn.cc" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn/ucdn.c" />
+		
+		<!-- <file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-coretext.cc" if="HAVE_CORETEXT" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-glib.cc" if="HAVE_GLIB" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-gobject-structs.cc" if="HAVE_GOBJECT" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-graphite2.cc" if="HAVE_GRAPHITE2" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-icu.cc" if="HAVE_ICU" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-uniscribe.cc" if="windows" /> -->
 		
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-blob.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-buffer-serialize.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-buffer.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-common.cc" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-coretext.cc" if="HAVE_CORETEXT" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-face.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-fallback-shape.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-font.cc" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-glib.cc" if="HAVE_GLIB" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-gobject-structs.cc" if="HAVE_GOBJECT" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-graphite2.cc" if="HAVE_GRAPHITE2" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-icu.cc" if="HAVE_ICU" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ot-font.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ot-layout.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ot-map.cc" />
@@ -39,25 +49,8 @@
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shape-plan.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shape.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shaper.cc" />
-		<!-- <file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-uniscribe.cc" if="windows" /> -->
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-unicode.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-warning.cc" />
-		
-		<section if="windows || linux">
-			
-			<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn" />
-			<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn/ucdn.c" />
-			
-		</section>
-		
-		<section>
-			
-			<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/freetype/include" />
-			<compilerflag value="-DHAVE_FREETYPE" />
-			
-			<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ft.cc" />
-			
-		</section>
 		
 	</files>
 	
