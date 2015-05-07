@@ -9,6 +9,9 @@
 		<compilerflag value="-DHAVE_FREETYPE" />
 		<compilerflag value="-DHAVE_OT" />
 		<compilerflag value="-DHAVE_UCDN" />
+		<compilerflag value="-DHB_NO_MT" /> <!-- TODO: Enable MT -->
+		
+		<compilerflag value="-Wno-undefined-bool-conversion" if="mac" />
 		
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ft.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn.cc" />
