@@ -17,8 +17,8 @@
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn/ucdn.c" />
 		
-		<!-- <file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-coretext.cc" if="HAVE_CORETEXT" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-glib.cc" if="HAVE_GLIB" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-coretext.cc" if="mac || ios" />
+		<!-- <file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-glib.cc" if="HAVE_GLIB" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-gobject-structs.cc" if="HAVE_GOBJECT" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-graphite2.cc" if="HAVE_GRAPHITE2" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-icu.cc" if="HAVE_ICU" />
