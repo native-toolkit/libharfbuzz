@@ -2,7 +2,7 @@
 	
 	<files id="native-toolkit-harfbuzz" >
 		
-		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/freetype/include" />
+		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/freetype/include" if="NATIVE_TOOLKIT_HAVE_FREETYPE" />
 		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-ucdn" />
 		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/harfbuzz/src/" />
 		
