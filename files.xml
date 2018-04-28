@@ -14,7 +14,6 @@
 		<compilerflag value="-DHAVE_UCDN" />
 		<compilerflag value="-DHB_NO_MT" /> <!-- TODO: Enable MT -->
 		<compilerflag value="-DHAVE_CORETEXT" if="mac || ios" />
-		<compilerflag value="-DMAC_OS_X_VERSION_MIN_REQUIRED=1070" if="mac" />
 		
 		<compilerflag value="-Wno-undefined-bool-conversion" if="mac" />
 		
