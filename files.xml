@@ -69,6 +69,7 @@
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shape-plan.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shape.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-shaper.cc" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-static.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-unicode.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-warning.cc" />
 
