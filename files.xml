@@ -15,7 +15,7 @@
 		<compilerflag value="-DHB_NO_MT" /> <!-- TODO: Enable MT -->
 
 		<compilerflag value="-DHAVE_UNISCRIBE" if="windows" />
-		<compilerflag value="-DHAVE_DIRECTWRITE" if="windows" unless="HXCPP_M64" /> <!-- Windows 7+ -->
+		<compilerflag value="-DHAVE_DIRECTWRITE" if="windows HXCPP_M64" /> <!-- Windows 7+ -->
 		<compilerflag value="-wd4244" if="windows" />
 		<compilerflag value="-wd4267" if="windows" />
 		<compilerflag value="-D_CRT_SECURE_NO_WARNINGS" if="windows" />
@@ -34,7 +34,7 @@
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-graphite2.cc" if="HAVE_GRAPHITE2" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-icu.cc" if="HAVE_ICU" /> -->
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-uniscribe.cc" if="windows" />
-		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-directwrite.cc" if="windows" />
+		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-directwrite.cc" if="windows HXCPP_M64" />
 
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-aat-layout.cc" />
 		<file name="${NATIVE_TOOLKIT_PATH}/harfbuzz/src/hb-blob.cc" />
